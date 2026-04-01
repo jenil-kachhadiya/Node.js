@@ -41,7 +41,7 @@ exports.addBook = async (req, res) => {
     try {
         let imagePath = "";
         if (req.file) {
-            imagePath = `/Books/${req.file.filename}`;
+            imagePath = `/uploads/${req.file.filename}`;
         }
         const book = await Book.create({
             ...req.body,
@@ -68,7 +68,7 @@ exports.updateBook = async (req, res) => {
                     fs.unlinkSync(oldPath);
                 }
             }
-            imagePath = `/Books/${req.file.filename}`;
+            imagePath = `/uploads/${req.file.filename}`;
         }
 
         const updatedBook = await Book.findByIdAndUpdate(
