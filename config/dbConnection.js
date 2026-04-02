@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // DB Connection
 const connectDB = async () => {
-    mongoose.connect("mongodb://localhost:27017/store")
+    mongoose.connect("mongodb+srv://jenil:jenil45@jenil-backend.qwdnoji.mongodb.net/store")
     .then(() => console.log("DB Connected"))
     .catch(err => console.log(err));
 }
